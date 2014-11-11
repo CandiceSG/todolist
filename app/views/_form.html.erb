@@ -1,0 +1,18 @@
+<%= form_for(@task) do | t | %>
+
+    <%= t.label :name %>
+    <%= t.text_field :name, placeholder: 'type your task' %>
+
+    <%= t.label :description %>
+    <%= t.text_field :description, placeholder: 'describe your task' %>
+
+    <%= t.label :deadline %>
+    <%= t.text_field :deadline, placeholder: 'deadline' %>
+
+    <% if @task.persisted? %>
+      <%= t.label :check %>
+      <%= t.check_box :check %>
+    <% end %>
+
+    <%= t.submit %>
+  <% end %>
